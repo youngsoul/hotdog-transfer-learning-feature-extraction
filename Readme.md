@@ -1,5 +1,9 @@
 # HotDog, Not-HotDog Transfer Learning Feature Extraction
 
+[Silicon Valley HotDog - Not HotDog Scene](https://www.youtube.com/watch?v=ACmydtFDTGs)
+
+
+
 This repo will example of Deep Transfer Learning using feature extraction for the Silicon Valley "HotDog, Not-HotDog" image classifier
 
 The transfer learning employed in this example is call `feature extraction`.
