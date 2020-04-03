@@ -3,13 +3,11 @@
 [Silicon Valley HotDog - Not HotDog Scene](https://www.youtube.com/watch?v=ACmydtFDTGs)
 
 
-
 This repo will example of Deep Transfer Learning using feature extraction for the Silicon Valley "HotDog, Not-HotDog" image classifier
 
 The transfer learning employed in this example is call `feature extraction`.
 
 We will use the VGG16 CNN model, remove the fully connected network layer and use the output of the convolutional layers to create features to train a LogisticRegression model.
-
 
 
 ## Dataset
@@ -38,6 +36,23 @@ You can find that dataset on my [Github repo here](https://github.com/youngsoul/
 `config.py`
 
 The config file contains path configurations to the dataset mentioned above, and paths to where the output of the feature extraction and model training.
+
+## Deep Transfer Learning with Feature Extraction
+
+This style of Deep Learning leverages the convolutional layers to extract a feature vector that is used as input into a more traditional machine learning model - in this case LogisticRegression.
+
+![cnn_fcn](./doc_images/cnn_fcn.png)
+
+Transfer learning will use the convolutional learning layers, but remove the fully connected layer used for classification.  When creating the model we will save the output of the CNN layer and train the LogisticRegression.
+
+When training the new model, we need to freeze the CNN layers because we are using pre-trained weights from the ImageNet dataset.  Transfer learning is based on re-using weights from previous model training, the transfer that learning to a new problem and only train the classification part of the model on new targets.
+
+![freeze](./doc_images/freeze.png)
+
+The resulting model looks like:
+
+![freeze](./doc_images/cnn_lr.png)
+
 
 
 ## Feature Extraction
